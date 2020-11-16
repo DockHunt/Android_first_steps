@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/topTextBox"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+
+        android:maxLines="8"
+        android:text="Dock's text\n On the top"
+        android:textSize="25sp"
+
+        android:layout_margin="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/tacoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="obtain taco"
+        android:textSize="22sp"
+        android:paddingTop="3dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="3dp"
+
+        android:layout_below="@+id/topTextBox" />
+
+    <TextView
+        android:id="@+id/tacoCount"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+
+        android:maxLines="8"
+        android:text="Taco count here"
+        android:textSize="25sp"
+
+        android:layout_margin="10dp"
+        android:layout_below="@+id/tacoButton" />
+
+    <Button
+        android:id="@+id/extraButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Send Extra Message"
+        android:textSize="22sp"
+        android:paddingTop="3dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="3dp"
+
+        android:layout_below="@+id/tacoCount" />
+
+
+
+
+</RelativeLayout>

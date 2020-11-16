@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="dock_was_here_n_on_top_of_the_screen">Dock was Here!\n On top of the screen</string>
+    <string name="self_destruct">self destruct</string>
+</resources>
