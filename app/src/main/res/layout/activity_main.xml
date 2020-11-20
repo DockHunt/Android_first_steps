@@ -52,11 +52,11 @@
         android:layout_below="@+id/tacoButton" />
 
     <Button
-        android:id="@+id/extraButton"
+        android:id="@+id/newActButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Send Extra Message"
+        android:text="New Activity"
         android:textSize="22sp"
         android:paddingTop="3dp"
         android:paddingLeft="8dp"

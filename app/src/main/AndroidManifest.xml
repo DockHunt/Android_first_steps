@@ -9,7 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp">
-        <activity android:name=".DisplayMessageActivity"></activity>
+        <activity
+            android:name=".SecretImageActivity"
+            android:parentActivityName=".SecondActivity">
+            <!-- meta data is only needed for APL lvl <16 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SecondActivity" />
+        </activity>
+
+        <activity
+            android:name=".SecondActivity"
+            android:parentActivityName=".MainActivity">
+
+            <!-- meta data is only needed for APL lvl <16 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

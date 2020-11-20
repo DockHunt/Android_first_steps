@@ -1,57 +1,66 @@
 package com.example.myfirstapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //global variables
     private int tacoCounter = 0;
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button taco_button = findViewById(R.id.tacoButton);
-        taco_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        final Button taco_button = (Button) findViewById(R.id.tacoButton);
+        taco_button.setOnClickListener(this);
+
+        final Button act_button = (Button) findViewById(R.id.newActButton);
+        act_button.setOnClickListener(this);
+    }
+
+    //switch selector for all buttons
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tacoButton:
                 tacoCounter = tacoCounter + 1;
                 updateTacos();
-            }
-        });
-
-        final Button taco_button = findViewById(R.id.tacoButton);
-        taco_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                tacoCounter = tacoCounter + 1;
-                updateTacos();
-            }
-        });
-
-
+                break;
+            case R.id.newActButton:
+                newActivity();
+                break;
+            default:
+                ButtonHandlingError();
+                break;
+        }
     }
 
     public void updateTacos()
     {
-        TextView tc = (TextView)findViewById(R.id.tacoCount);
-        tc.setText(Integer.toString(tacoCounter));
+            TextView tc = (TextView)findViewById(R.id.tacoCount);
+            tc.setText(Integer.toString(tacoCounter));
+            System.out.println("error is thrown");
     }
 
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText et = (EditText) findViewById(R.id.extraButton);
-        String message = et.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+
+    public void newActivity() {
+        Intent intent = new Intent(this, SecondActivity.class);
         startActivity(intent);
 
     }
 
+    public void ButtonHandlingError() {
+        TextView tc = (TextView)findViewById(R.id.tacoCount);
+        tc.setText("error: you have somehow clicked a button that doesn't exist");
+    }
 }

@@ -4,6 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DisplayMessageActivity">
+    tools:context=".SecondActivity">
+
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+
+        android:maxLines="8"
+        android:textSize="40sp"
+
+        android:layout_margin="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        android:id="@+id/secretButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+
+        android:text="secret"
+        android:textSize="0sp"
+        android:padding="0dp"
+
+        android:background=""
+
+        android:layout_below="@+id/messageText"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
